@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Артем Савонин — портфолио путешествий</title>
+  <meta name="description" content="Портфолио Артема Савонина: организация путешествий, авторских маршрутов, корпоративных выездов, походов и полевых спортивных событий.">
+  <style>
+    :root {
+      --paper: #f5f1e9;
+      --ink: #1b211c;
+      --muted: #687269;
+      --line: #d8d1c3;
+      --white: #fffdf8;
+      --forest: #2f5f46;
+      --river: #276f7b;
+      --clay: #a95d42;
+      --sun: #c9933a;
+      --night: #14201b;
+      --soft: #e6ece3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: rgba(39, 111, 123, 0.42);
+      text-underline-offset: 4px;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background: var(--night);
+      color: var(--white);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(14, 24, 19, 0.92), rgba(14, 24, 19, 0.6) 42%, rgba(14, 24, 19, 0.12)),
+        linear-gradient(0deg, rgba(14, 24, 19, 0.9), rgba(14, 24, 19, 0.08) 38%),
+        url("travel_portfolio_assets/hero-forest.jpg");
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.02);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 88px 0 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      margin: 0 0 22px;
+      color: rgba(255, 253, 248, 0.76);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: var(--sun);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 24px;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin-bottom: 32px;
+      color: rgba(255, 253, 248, 0.86);
+      font-size: clamp(18px, 2vw, 23px);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav a,
+    .case-link {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-weight: 760;
+      text-decoration: none;
+    }
+
+    .nav a {
+      border: 1px solid rgba(255, 253, 248, 0.34);
+      color: var(--white);
+      background: rgba(255, 253, 248, 0.06);
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .intro {
+      background: var(--white);
+    }
+
+    .kicker {
+      margin-bottom: 12px;
+      color: var(--river);
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      max-width: 840px;
+      margin-bottom: 26px;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 42px;
+      align-items: start;
+    }
+
+    .large {
+      color: #2f392f;
+      font-size: 20px;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .fact {
+      border-top: 3px solid var(--forest);
+      padding-top: 14px;
+    }
+
+    .fact strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      border: 1px solid #c9d3ca;
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: #536157;
+      background: rgba(255, 253, 248, 0.62);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .section-tile {
+      border-left: 4px solid var(--clay);
+      padding: 0 0 0 18px;
+    }
+
+    .section-tile h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+      line-height: 1.18;
+    }
+
+    .section-tile p {
+      color: var(--muted);
+    }
+
+    .case {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 32px;
+      align-items: start;
+      border-top: 1px solid var(--line);
+      padding-top: 36px;
+      margin-top: 36px;
+    }
+
+    .case:first-of-type {
+      margin-top: 0;
+    }
+
+    .case-media {
+      display: grid;
+      gap: 12px;
+    }
+
+    .case-media img,
+    .case-media video {
+      width: 100%;
+      border-radius: 8px;
+      background: #d7d1c3;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .case-media video {
+      aspect-ratio: 16 / 9;
+    }
+
+    .caption {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .case h3 {
+      margin-bottom: 12px;
+      font-size: clamp(25px, 3vw, 36px);
+      line-height: 1.08;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .meta span {
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: #223429;
+      background: var(--soft);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .case ul {
+      margin: 18px 0 0;
+      padding-left: 20px;
+      color: #344137;
+    }
+
+    .quote {
+      border-left: 4px solid var(--sun);
+      margin: 22px 0 0;
+      padding: 4px 0 4px 16px;
+      color: #3c463f;
+      font-size: 18px;
+    }
+
+    .case-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .case-link {
+      border: 1px solid #b9c8bc;
+      color: var(--forest);
+      background: rgba(255, 253, 248, 0.78);
+      font-size: 14px;
+    }
+
+    .placeholder {
+      min-height: 240px;
+      display: grid;
+      align-content: end;
+      border-radius: 8px;
+      padding: 22px;
+      color: var(--white);
+      background:
+        linear-gradient(180deg, rgba(20, 32, 27, 0.12), rgba(20, 32, 27, 0.86)),
+        linear-gradient(135deg, #2f5f46, #276f7b 52%, #c9933a);
+      aspect-ratio: 4 / 3;
+    }
+
+    .placeholder strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .placeholder span {
+      color: rgba(255, 253, 248, 0.78);
+      font-size: 14px;
+    }
+
+    .compact {
+      background: #e7ece3;
+    }
+
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .compact-card {
+      border: 1px solid #cbd5ca;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .compact-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .compact-card div {
+      padding: 18px;
+    }
+
+    .compact-card h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+      line-height: 1.15;
+    }
+
+    .compact-card p {
+      color: var(--muted);
+    }
+
+    .compact-card a {
+      font-weight: 760;
+    }
+
+    .closing {
+      background: var(--night);
+      color: var(--white);
+    }
+
+    .closing p {
+      max-width: 760px;
+      color: rgba(255, 253, 248, 0.76);
+      font-size: 20px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .contact-item {
+      border-top: 1px solid rgba(255, 253, 248, 0.24);
+      padding-top: 16px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--white);
+      font-size: 17px;
+    }
+
+    .contact-item span,
+    .contact-item a {
+      color: rgba(255, 253, 248, 0.78);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        min-height: 780px;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(0deg, rgba(14, 24, 19, 0.94), rgba(14, 24, 19, 0.55) 58%, rgba(14, 24, 19, 0.12)),
+          url("travel_portfolio_assets/hero-forest.jpg");
+        background-size: cover;
+        background-position: 58% center;
+      }
+
+      .intro-grid,
+      .case {
+        grid-template-columns: 1fr;
+      }
+
+      .section-grid,
+      .compact-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      .shell {
+        width: min(100% - 28px, 1160px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="shell hero-inner">
+      <h1>Артем Савонин</h1>
+      <p class="hero-copy">Создаю и организовываю путешествия, маршруты и групповые выезды: от идеи и программы до логистики, людей, безопасности и живого опыта в пути. Санкт-Петербург.</p>
+      <nav class="nav" aria-label="Разделы портфолио">
+        <a href="#corporate">Корпоративные выезды</a>
+        <a href="#international">Международные маршруты</a>
+        <a href="#outdoor">Outdoor</a>
+        <a href="#events">События</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="shell intro-grid">
+        <div>
+          <p class="kicker">Обо мне</p>
+          <h2>Собираю маршрут так, чтобы он работал в реальности</h2>
+          <p class="large">В моем опыте есть корпоративные выезды, авторские международные маршруты, походы, сплавы и работа на спортивных событиях. Мне важно не просто выбрать точки на карте, а собрать ритм поездки, понятную логистику, безопасную среду и живой опыт для людей в группе.</p>
+          <div class="pill-row">
+            <span class="pill">маршруты с нуля</span>
+            <span class="pill">групповые выезды</span>
+            <span class="pill">корпоративные программы</span>
+            <span class="pill">outdoor и сплавы</span>
+            <span class="pill">полевые события</span>
+          </div>
+        </div>
+        <aside class="facts" aria-label="Ключевые факты">
+          <div class="fact"><strong>10+</strong><span>корпоративных мероприятий в Газпромбанке: группы, тайминг, программа и координация</span></div>
+          <div class="fact"><strong>30</strong><span>участников корпоративного выезда на Алтай с активностями, тренерами и безопасностью</span></div>
+          <div class="fact"><strong>6+</strong><span>посещенных стран и самостоятельные маршруты по Азии без пакетных туров</span></div>
+          <div class="fact"><strong>11/12</strong><span>дней в авторских маршрутах: Таиланд и Япония + Корея</span></div>
+          <div class="fact"><strong>5</strong><span>дней автономной полевой работы на Elbrus World Race</span></div>
+          <div class="fact"><strong>4</strong><span>линии опыта: корпоративные выезды, маршруты, outdoor, спортивные события</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <p class="kicker">Структура опыта</p>
+        <h2>Четыре направления, по которым собраны кейсы</h2>
+        <div class="section-grid">
+          <article class="section-tile">
+            <h3><a href="#corporate">Корпоративные выезды и программы</a></h3>
+            <p>Групповые форматы, где важны программа, люди, тайминг, подрядчики, безопасность и состояние команды.</p>
+          </article>
+          <article class="section-tile">
+            <h3><a href="#international">Авторские международные маршруты</a></h3>
+            <p>Самостоятельная сборка путешествий: перелеты, жилье, перемещения, активности, документы и запасные сценарии.</p>
+          </article>
+          <article class="section-tile">
+            <h3><a href="#outdoor">Походы, сплавы и outdoor</a></h3>
+            <p>ПВД, сплавы, горные переходы и практический опыт движения в природной среде.</p>
+          </article>
+          <article class="section-tile">
+            <h3><a href="#events">Волонтерство и спортивные события</a></h3>
+            <p>Трасса, разметка, пункты питания, старт/финиш, судейство и работа команды в день события.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="corporate" class="intro">
+      <div class="shell">
+        <p class="kicker">Корпоративные выезды</p>
+        <h2>Групповые программы, где маршрут должен держать людей, смысл и логистику</h2>
+
+        <article class="case">
+          <div class="case-media">
+            <video controls preload="metadata" poster="travel_portfolio_assets/altai-water.jpg">
+              <source src="travel_portfolio_assets/altai-2024.mp4" type="video/mp4">
+            </video>
+            <img src="travel_portfolio_assets/altai-water.jpg" alt="Алтай, природный маршрут">
+            <p class="caption">Алтай, 2024. Корпоративный командообразующий выезд.</p>
+          </div>
+          <div>
+            <div class="meta">
+              <span>Газпромбанк</span>
+              <span>4 дня</span>
+              <span>30 участников</span>
+              <span>организатор со стороны банка</span>
+            </div>
+            <h3>Корпоративный выезд на Алтай</h3>
+            <p>Командообразующий выезд, который соединил природную среду, культурный контекст Алтая, активности и обучающие блоки. Я участвовал в разработке маршрута и программы, встраивал работу тренеров и отвечал за группу и безопасность на протяжении путешествия.</p>
+            <ul>
+              <li>удаленный регион и новый для команды формат выезда;</li>
+              <li>совместная разработка маршрута с командой на месте;</li>
+              <li>баланс природы, активности, обучения и состояния группы;</li>
+              <li>видео и программа использовались как контекст для кейса, без публикации вложений на сайте.</li>
+            </ul>
+            <p class="quote">Здесь ты не покоритель, здесь ты гость.</p>
+            <div class="case-links" aria-label="Связанные организации">
+              <a class="case-link" href="https://www.gazprombank.ru/">Газпромбанк</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-media">
+            <div class="placeholder" role="img" aria-label="Фото корпоративных мероприятий будут добавлены отдельно">
+              <strong>Корпоративные мероприятия: фото к отбору</strong>
+              <span>Здесь лучше поставить кадры именно из рабочих событий, а не подменять их outdoor-фотографиями.</span>
+            </div>
+            <p class="caption">Групповые форматы: работа с людьми, ритмом дня и безопасной организацией.</p>
+          </div>
+          <div>
+            <div class="meta">
+              <span>Газпромбанк</span>
+              <span>10+ мероприятий</span>
+              <span>20-200 человек</span>
+            </div>
+            <h3>Корпоративные мероприятия в Газпромбанке</h3>
+            <p>Опыт участия в организации корпоративных мероприятий разного масштаба: от камерных командных форматов до событий для больших групп. Этот блок важен как практическая база: ожидания участников, тайминг, коммуникация, работа с подрядчиками и множество деталей, от которых зависит качество события.</p>
+            <ul>
+              <li>работа с группами от 20 до 200 человек;</li>
+              <li>участие в подготовке программы, тайминга и организационной логики;</li>
+              <li>координация участников и команды в день события;</li>
+              <li>практика спокойной работы с изменениями и ограничениями.</li>
+            </ul>
+            <div class="case-links" aria-label="Связанные организации">
+              <a class="case-link" href="https://www.gazprombank.ru/">Газпромбанк</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="international">
+      <div class="shell">
+        <p class="kicker">Международные маршруты</p>
+        <h2>Авторские поездки, собранные с нуля: маршрут, документы, перемещения и запасные сценарии</h2>
+
+        <article class="case">
+          <div class="case-media">
+            <div class="placeholder" role="img" aria-label="Фото Таиланда будут добавлены отдельно">
+              <strong>Таиланд: фото нужно добавить отдельно</strong>
+              <span>В текущей папке нет проверенных кадров Таиланда, поэтому не смешиваю этот кейс с фото Китая или Центральной Азии.</span>
+            </div>
+            <p class="caption">Таиланд, 2025. Пхукет, Кхао-Сок, Чео-Лан и Бангкок; визуальный ряд будет добавлен после отбора фотографий именно из этой поездки.</p>
+          </div>
+          <div>
+            <div class="meta">
+              <span>Таиланд</span>
+              <span>2025</span>
+              <span>11 дней</span>
+              <span>2 участника</span>
+            </div>
+            <h3>Таиланд: авторский маршрут за три дня до вылета</h3>
+            <p>Путешествие в новую для себя страну, собранное с нуля: Пхукет, серф-проба, залив Пханънга, Кхао-Сок, озеро Чео-Лан и Бангкок. Маршрут пришлось собрать в сжатые сроки вместе с документами для международных прав, отелями, перемещениями и активностями.</p>
+            <ul>
+              <li>логика маршрута шла от пляжной адаптации к природе, активности и современному Бангкоку;</li>
+              <li>не покупали пакетные туры, многое делали самостоятельно;</li>
+              <li>на месте были перестановки дней, но общий сценарий сохранился;</li>
+              <li>в программе были погодные резервы, транспортные окна и альтернативы.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-media">
+            <img src="travel_portfolio_assets/japan-fuji-portrait.jpg" alt="Артем на фоне Фудзи">
+            <img src="travel_portfolio_assets/japan-gate.jpg" alt="Японские ворота и сад">
+            <p class="caption">Япония и Южная Корея, 2024. 12 дней, 2 участника.</p>
+          </div>
+          <div>
+            <div class="meta">
+              <span>Япония + Корея</span>
+              <span>2024</span>
+              <span>12 дней</span>
+              <span>2 участника</span>
+            </div>
+            <h3>Япония + Корея: маршрут через города, Фудзи и паром</h3>
+            <p>Самостоятельно собранное путешествие через Токио, Фудзикавагутико, Осаку, Киото, Фукуоку, Пусан и Сеул. Я планировал программу дней, перемещения и логику маршрута, адаптируя план по ходу поездки под состояние, город и открывающиеся возможности.</p>
+            <ul>
+              <li>сложность: визы, язык, международные трансферы и бронирования;</li>
+              <li>сильное решение: паром из Фукуоки в Пусан как часть маршрута, а не просто переезд;</li>
+              <li>важные точки: Фудзи, онсен, традиционный японский дом, крупные города;</li>
+              <li>часть бронирований и финансовых переводов помогал закрывать попутчик.</li>
+            </ul>
+            <p class="quote">Этот маршрут показал, как много решает не список мест, а последовательность: когда город, природа, переезд и отдых стоят на своих местах.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="outdoor" class="compact">
+      <div class="shell">
+        <p class="kicker">Походы, сплавы и outdoor</p>
+        <h2>Практика маршрутов в природной среде</h2>
+        <div class="compact-grid">
+          <article class="compact-card">
+            <div class="placeholder" role="img" aria-label="Фото сплавов в Карелии будут добавлены отдельно">
+              <strong>Карелия и сплавы: фото к отбору</strong>
+              <span>Нужны кадры именно со сплавов Stella, без подмены локальными маршрутами Ленинградской области.</span>
+            </div>
+            <div>
+              <h3>Карелия и сплавы</h3>
+              <p>Два сплава со Stella в 2025 году: майский спортивный поход и августовский маршрут по Шуе в роли помощника инструктора.</p>
+              <a href="https://stellakarelia.ru/">Stella Karelia</a>
+            </div>
+          </article>
+          <article class="compact-card">
+            <img src="travel_portfolio_assets/lo-trail-group.jpg" alt="Группа на экологическом маршруте в Ленинградской области">
+            <div>
+              <h3>Ленинградская область</h3>
+              <p>ПВД и локальные маршруты из Петербурга: Веремянский маршрут, Сестрорецкое болото, группы друзей и простая организация дня.</p>
+            </div>
+          </article>
+          <article class="compact-card">
+            <img src="travel_portfolio_assets/digoria-2022.jpg" alt="Дигорское ущелье">
+            <div>
+              <h3>Северная Осетия</h3>
+              <p>Личные горные переходы с рюкзаком, ночевками и ответственностью за второго человека: Кармадон, Фиагдон, Даргавс, Дигория.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="intro">
+      <div class="shell">
+        <p class="kicker">Волонтерство и спортивные события</p>
+        <h2>Полевые задачи, где качество события складывается из конкретных действий на маршруте</h2>
+
+        <article class="case">
+          <div class="case-media">
+            <img src="travel_portfolio_assets/elbrus-team.jpg" alt="Команда волонтеров Альпиндустрии">
+            <img src="travel_portfolio_assets/elbrus-pass.jpg" alt="Горный участок маршрута на Эльбрусе">
+            <p class="caption">Elbrus World Race, 2021. Автономная группа на западной стороне Эльбруса.</p>
+          </div>
+          <div>
+            <div class="meta">
+              <span>АльпИндустрия</span>
+              <span>Elbrus World Race</span>
+              <span>2021</span>
+              <span>7 человек в группе</span>
+            </div>
+            <h3>Elbrus World Race: полевая организация на маршруте</h3>
+            <p>Пятидневная автономная работа на западной стороне Эльбруса, в районе Хурзука. В составе волонтерской группы я занимался разметкой трассы, подготовкой пункта питания, перевозкой вещей и организацией работы участка.</p>
+            <ul>
+              <li>через участок прошло около 34 участников гонки;</li>
+              <li>ночью была внештатная ситуация с потерей участников на маршруте;</li>
+              <li>потребовалась эвакуация, ситуация завершилась безопасно;</li>
+              <li>опыт дал практику ответственности в полевых условиях.</li>
+            </ul>
+            <div class="case-links" aria-label="Связанные организации">
+              <a class="case-link" href="https://alpindustria.ru/">АльпИндустрия</a>
+              <a class="case-link" href="https://www.elbrusworldrace.com/en/elbrus-world-race/">Elbrus World Race</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="compact-grid">
+          <article class="compact-card">
+            <img src="travel_portfolio_assets/sport-marathon-fest.jpg" alt="Sport-Marathon Fest, работа на маршруте">
+            <div>
+              <h3>Wild Trail и Sport-Marathon Fest</h3>
+              <p>Пункты питания, старт/финиш, выдача, разметка трассы и физическая работа на точке. Трейловые события как школа полевой организации.</p>
+              <a href="https://wildtrail.ru/">Wild Trail</a>
+              <span> / </span>
+              <a href="https://sportmarafonfest.ru/">Sport-Marathon Fest</a>
+            </div>
+          </article>
+          <article class="compact-card">
+            <img src="travel_portfolio_assets/gto-race.jpg" alt="Команда организаторов Гонки ГТО">
+            <div>
+              <h3>Гонка ГТО</h3>
+              <p>Судейство и организация мультигонок с препятствиями: подготовка этапов, проведение, разборка и работа команды на маршруте.</p>
+              <a href="https://www.gonkagto.ru/">Гонка ГТО</a>
+            </div>
+          </article>
+          <article class="compact-card">
+            <img src="travel_portfolio_assets/moscow-half-judge.jpg" alt="Судейская работа на Московском полумарафоне">
+            <div>
+              <h3>Судейство и массовые старты</h3>
+              <p>Опыт работы на спортивных событиях, где важны регламент, поток участников, коммуникация и спокойная точность в день старта.</p>
+              <a href="https://moscowhalf.runc.run/">Московский полумарафон</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="closing">
+      <div class="shell">
+        <p class="kicker">Контакты</p>
+        <h2>Готов обсудить маршрут, выезд или полевое событие</h2>
+        <p>Артем Савонин, Санкт-Петербург. Портфолио можно отправлять как спокойное представление опыта: без тяжелых приложений, с фокусом на реальные кейсы, роли и визуальные материалы.</p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <strong>Email</strong>
+            <span>добавить адрес</span>
+          </div>
+          <div class="contact-item">
+            <strong>Telegram</strong>
+            <span>добавить username</span>
+          </div>
+          <div class="contact-item">
+            <strong>Локация</strong>
+            <span>Санкт-Петербург, возможны выезды</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
