@@ -1,0 +1,22 @@
+
+# Local portfolio working files
+index_working_snapshot_*.html
+index_layout_checkpoint_*.html
+
+# Source and intermediate video files
+travel_portfolio_assets/Алтай_2024_исходник.mp4
+travel_portfolio_assets/altai-2024-enhanced-*.mp4
+travel_portfolio_assets/altai-test-*.jpg
+travel_portfolio_assets/altai-contact-sheet.jpg
+
+# Trip program/context files are not published on the site
+travel_portfolio_assets/*.docx
+travel_portfolio_assets/*.pdf
+
+# Duplicate local download names
+travel_portfolio_assets/100_пудовый забег.jpg
+travel_portfolio_assets/thaiboat.jpg
+travel_portfolio_assets/altai-2024-source-web-1080p.mp4
+travel_portfolio_assets/altai-2024.mp4
+travel_portfolio_assets/asia-group.jpg
+travel_portfolio_assets/china-street.jpg
