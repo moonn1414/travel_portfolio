@@ -1159,6 +1159,17 @@
     <button class="lightbox-nav next" type="button" aria-label="Следующий медиафайл">›</button>
   </div>
   <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    function resetInitialScroll() {
+      if (!window.location.hash) window.scrollTo(0, 0);
+    }
+
+    window.addEventListener("pageshow", () => requestAnimationFrame(resetInitialScroll));
+    window.addEventListener("load", () => setTimeout(resetInitialScroll, 0));
+
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = lightbox ? lightbox.querySelector("img") : null;
