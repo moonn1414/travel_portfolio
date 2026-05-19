@@ -306,11 +306,18 @@
       aspect-ratio: 16 / 9;
     }
 
-    .video-frame video {
+    .video-frame video,
+    .video-frame iframe {
       width: 100%;
+      border: 0;
       border-radius: 8px;
       background: #101612;
       object-fit: cover;
+    }
+
+    .video-frame iframe {
+      display: block;
+      aspect-ratio: 16 / 9;
     }
 
     .media-carousel {
@@ -813,10 +820,8 @@
 
         <article class="case">
           <div class="case-media altai-media">
-            <div class="video-frame">
-              <video controls preload="metadata" poster="travel_portfolio_assets/altai-water.jpg">
-                <source src="travel_portfolio_assets/altai-2024-web-720p.mp4" type="video/mp4">
-              </video>
+            <div class="video-frame drive-video">
+              <iframe src="https://drive.google.com/file/d/1XGKVEG53FuVfELbW7gIXqxuehba0T-EJ/preview" title="Видео корпоративного выезда на Алтай" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
             <p class="caption">Алтай, 2024. Корпоративный выезд.</p>
             <div class="case-gallery">
