@@ -5,6 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Артем Савонин — портфолио путешествий</title>
   <meta name="description" content="Портфолио Артема Савонина: организация путешествий, авторских маршрутов, корпоративных выездов, походов и полевых спортивных событий.">
+  <script>
+    (function () {
+      const hasInitialAnchor = window.location.hash.length > 1;
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      if (hasInitialAnchor) return;
+
+      document.documentElement.style.scrollBehavior = "auto";
+      let released = false;
+      const forceTop = function () {
+        if (!released) window.scrollTo(0, 0);
+      };
+
+      forceTop();
+      document.addEventListener("DOMContentLoaded", forceTop, { once: true });
+      window.addEventListener("load", function () {
+        forceTop();
+        window.setTimeout(forceTop, 50);
+        window.setTimeout(forceTop, 250);
+        window.setTimeout(function () {
+          forceTop();
+          released = true;
+          document.documentElement.style.scrollBehavior = "";
+        }, 900);
+      }, { once: true });
+    })();
+  </script>
   <style>
     :root {
       --paper: #f5f1e9;
@@ -1159,17 +1185,6 @@
     <button class="lightbox-nav next" type="button" aria-label="Следующий медиафайл">›</button>
   </div>
   <script>
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-
-    function resetInitialScroll() {
-      if (!window.location.hash) window.scrollTo(0, 0);
-    }
-
-    window.addEventListener("pageshow", () => requestAnimationFrame(resetInitialScroll));
-    window.addEventListener("load", () => setTimeout(resetInitialScroll, 0));
-
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = lightbox ? lightbox.querySelector("img") : null;
