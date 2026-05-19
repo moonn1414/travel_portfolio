@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Артем Савонин — портфолио путешествий</title>
   <meta name="description" content="Портфолио Артема Савонина: организация путешествий, авторских маршрутов, корпоративных выездов, походов и полевых спортивных событий.">
+  <script>
+    (function () {
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+      window.scrollTo(0, 0);
+    })();
+  </script>
   <style>
     :root {
       --paper: #f5f1e9;
@@ -1160,6 +1169,16 @@
     <button class="lightbox-nav next" type="button" aria-label="Следующий медиафайл">›</button>
   </div>
   <script>
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ block: "start", behavior: "auto" });
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      });
+    });
+
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = lightbox ? lightbox.querySelector("img") : null;
